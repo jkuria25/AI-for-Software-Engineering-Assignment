@@ -1,0 +1,60 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOcZr2bcGj0aXSWR1vj3nKs"
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "ndRO1LvGGmJ4"
+      },
+      "outputs": [],
+      "source": [
+        "AI-suggested code by GitHub Copilot\n",
+        "\n",
+        "def sort_dicts_by_key(lst, key):\n",
+        "    return sorted(lst, key=lambda d: d[key])\n",
+        "\n",
+        "# Manual implementation\n",
+        "def sort_dicts_by_key_manual(lst, key):\n",
+        "    sorted_lst = []\n",
+        "    for d in lst:\n",
+        "        sorted_lst.append((d[key], d))\n",
+        "    sorted_lst.sort()\n",
+        "    return [d_dict for _, d_dict in sorted_lst]\n",
+        "\n",
+        "\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Analysis:\n",
+        "Both the AI-suggested code and the manual implementation solve the problem of sorting a list of dictionaries by a specific key. However, there are significant differences in efficiency and readability.\n",
+        "\n",
+        "The AI-suggested code leverages Python's built-in `sorted` function with a key parameter, which is more Pythonic and efficient. This method sorts the list in a single line, utilizing Python's internal sorting algorithm, typically Timsort, which has a worst-case and average time complexity of O(n log n). This approach is faster and cleaner than the manual implementation.\n",
+        "\n",
+        "In contrast, the manual implementation manually constructs a list of tuples, where each tuple contains the value of the key and the corresponding dictionary. It then sorts this list and extracts the dictionaries back into a new list. This method is less efficient due to the extra steps of creating a new list of tuples and the subsequent extraction of dictionaries from the sorted list. Although this approach is explicit, it introduces unnecessary complexity and computation, which can degrade performance, especially with large lists.\n",
+        "\n",
+        "The AI-suggested implementation is more efficient because it minimizes unnecessary operations and leverages optimized built-in functions. This makes it faster and more memory-efficient. The manual implementation, although clear, lacks the performance benefits of the built-in `sorted` function. Therefore, the AI-suggested code is preferred for its efficiency and simplicity. It showcases the advantage of using built-in functions where possible to solve problems effectively."
+      ],
+      "metadata": {
+        "id": "NFqhbptgHDRU"
+      }
+    }
+  ]
+}
